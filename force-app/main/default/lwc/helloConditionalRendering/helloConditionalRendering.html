@@ -1,0 +1,18 @@
+<template>
+
+        <lightning-input
+                type="checkbox"
+                label="show details"
+                onchange={handleChnage}
+        ></lightning-input>
+        <div class="slds-var-m-vertical_medium">
+                <template if:true={areDetailsVisible}>
+                        These are the Details
+                </template>
+                <template if:false={areDetailsVisible}>
+                        Not showing details.
+                </template>
+        </div>
+
+
+</template>
