@@ -1,0 +1,16 @@
+<template>
+    <lightning-button
+        label="Load Contacts"
+        onclick={handleLoad}
+    ></lightning-button>
+
+    <template if:true={contacts}>
+        <template for:each={contacts} for:item="contact">
+            <p key={contact.Id} class="contactName">{contact.Name}</p>
+        </template>
+    </template>
+    <template if:true={error}>
+        <p class="error">{error}</p>
+    </template>
+    
+</template>
