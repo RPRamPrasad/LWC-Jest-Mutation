@@ -1,0 +1,24 @@
+<template>
+    
+                    <lightning-input
+                        type="search"
+                        onchange={handleKeyChange}
+                        label="Search"
+                        value={searchKey}
+                    ></lightning-input>
+
+
+                    <lightning-button
+                        label="Search"
+                        onclick={handleSearch}
+                    ></lightning-button>
+
+                    <template if:true={contacts}>
+                        <template for:each={contacts} for:item="contact">
+                            <p key={contact.Id}>{contact.Name}</p>
+                        </template>
+                    </template>
+                    <template if:true={error}>
+                        <p class="error">{error}</p>
+                    </template>
+</template>
